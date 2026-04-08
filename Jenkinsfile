@@ -5,9 +5,8 @@ pipeline {
      MACHINE = """
      ${
      sh(returnStdout: true,
-     script: 'uname -n'
-     )
-    }
+     script: 'uname -n')
+     }
      """
      JAVA_OPTS="-Xms128m -Xmx512m"
   }
@@ -20,6 +19,7 @@ pipeline {
         echo "Compiling the code"
         sh 'javac Param.java'
         echo "The author is ${AUTHOR}"
+        echo "The Machine is ${MACHINE}"
       }
      }   
     stage('Execute'){
