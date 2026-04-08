@@ -32,7 +32,7 @@ pipeline {
       steps{
         echo "And here I display the name of the machine "
         sh 'javac Machine.java'
-        sh "java Machine ${MACHINE}"
+        sh 'java Machine ${MACHINE}'
       }
     }
   }
