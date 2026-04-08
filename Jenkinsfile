@@ -3,9 +3,11 @@ pipeline {
   environment {
      NAME = "Jenkins"
      MACHINE = """
+     ${
      sh(returnStdout: true,
      script: 'uname -n'
      )
+    }
      """
      JAVA_OPTS="-Xms128m -Xmx512m"
   }
